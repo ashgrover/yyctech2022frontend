@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
