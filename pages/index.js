@@ -43,7 +43,7 @@ export default function Home() {
                             }}>
                             Promotional Events
                         </Typography>
-                        <Box sx={{ display: "flex", flexWrap: "wrap", maxHeight:"90vh", overflow:"scroll" }}>
+                        <Box className="scrollstyler" sx={{ display: "flex", flexWrap: "wrap", maxHeight:"90vh", overflow:"scroll" }}>
                             {demoEvents.map((event, index) => (
                                 <EventCard key={index} />
                             ))}
