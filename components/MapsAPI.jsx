@@ -10,14 +10,14 @@ function MapsAPI({ google }) {
       <Map
       containerStyle={{maxWidth: '40.5%', maxHeight:"50%", display:"flex"}}
         google={google}
-        zoom={8}
+        zoom={14}
         style={{
           height: '100vh',
           display: "flex",
         }}
-        initialCenter={{ lat: 47.444, lng: -122.176 }}
+        initialCenter={{ lat: 51.04502760046978, lng: -114.06343276192595 }}
       >
-        <Marker position={{ lat: 48.00, lng: -122.00 }} />
+        <Marker position={{ lat: 51.04502760046978, lng: -114.06343276192595 }} />
       </Map>
     </div>
   );
