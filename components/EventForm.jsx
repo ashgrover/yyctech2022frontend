@@ -1,6 +1,6 @@
 import { Box, TextField } from '@mui/material'
 import React from 'react'
-
+import Typography from '@mui/material/Typography'
 function EventForm() {
     return (
         <center>
@@ -8,23 +8,27 @@ function EventForm() {
             component="form"
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '70%' },
-                    marginTop: "50px",
-                    border: "1px solid black",
+                    marginTop: "20px",
+                    marginBottom: "30px",
                     borderRadius: "8px",
-                    padding: "30px",
-                    width: "50%"
+                    paddingTop: "5px",
+                    paddingBottom: "30px",
+                    width: "45%",
+                    // boxShadow: "3px 3px 8px  3px lightgrey"
             }}
             noValidate
             autoComplete="off"
         >
-            <div>
+            <Typography sx={{color:'#737373'}} variant="h4">
+                Create Event
+            </Typography>
+                        <div>
                 <TextField
                     required
                     id="EventTitle"
                     label="Event Title"
                     type="text"
-                    variant='filled'
-                    
+                    variant='outlined'
                 />
             </div>
             <div>
@@ -40,14 +44,14 @@ function EventForm() {
                     id="EventLocation"
                     label="Location"
                     type="text"
-                    variant='filled'
+                    variant='outlined'
                 />
             </div>
             <div>
                 <TextField
                     id="EventImage"
                     type="file"
-                    variant='filled'
+                    variant='outlined'
                 />
             </div>
             <div>
@@ -56,18 +60,26 @@ function EventForm() {
                     id="EventDescription"
                     sx={{
                         '& input': {
-                            height: "230px"
+                            height: "200px"
                         }
                     }}
                     label="Description"
                     type="text"
-                    variant='filled'
+                    variant='outlined'
                 />
             </div>
             {/* <br/>
             <hr/> */}
             <br/>
-            <button style={{marginTop: "10px", backgroundColor:'rgb(58,149,233)', border: 'none', color:'white', width: "60%", height: "40px", borderRadius: "5px"}} >Create Event</button>
+            <button style={{
+                marginTop: "10px", 
+                backgroundColor:'rgb(58,149,233)', 
+                border: 'none', 
+                color:'white', 
+                width: "70%", 
+                height: "40px", 
+                borderRadius: "5px"
+                }} >Create Event</button>
         </Box>
         </center>
     )
