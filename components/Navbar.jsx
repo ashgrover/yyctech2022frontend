@@ -124,6 +124,7 @@ const ResponsiveAppBar = () => {
                                 {page}
                             </Button>
                         ))}
+                        <Button sx={{height:"40px", marginTop:"12px", background:"#5a93e9"}} variant="contained">Create Event</Button>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
