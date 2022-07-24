@@ -56,7 +56,7 @@ export default function Home() {
                         </Box>
                     </Grid>
                     <Grid item xs={4} md={6} lg={5}>
-                        <MapsAPI address={address} />
+                        <MapsAPI address={state.address} />
                     </Grid>
                 </Grid>
             </div>
