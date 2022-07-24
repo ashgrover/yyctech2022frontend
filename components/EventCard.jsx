@@ -34,7 +34,7 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
         console.log(open);
     }
     return (
-        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0", cursor:"pointer"}} onMouseEnter={hoverElement}>
+        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0", cursor:"pointer"}} className="zoomhover" onMouseEnter={hoverElement}>
             <CardMedia
                 component="img"
                 height="140"
