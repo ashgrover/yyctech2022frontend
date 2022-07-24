@@ -8,26 +8,34 @@ import EventDatePicker from "../components/EventDatePicker";
 import Stack from "@mui/material/Stack";
 import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
+import fetch from "isomorphic-unfetch";
 
 export default function Home() {
-    const[state, setState] = useState({address:""});
-    const [event, setEvent] = useState({});
+    const [state, setState] = useState({ address: "" });
+    const [promoEvent, setEvent] = useState([]);
     const [categories, setCategories] = useState([]);
-    const getApiData = async()=>{
-        const response = await fetch('http://localhost:8090/event/getAllEvent').then((response)=>response.json());
-        setEvent(...event, response);
+
+    const getApiData = async () => {
+        const response = await fetch("http://192.168.147.160:8090/event/getAllEvent", {
+            method: "GET",
+        });
+        const result = await response.json();
+        const promoEvent = JSON.parse(result);
+        setEvent(promoEvent);
     }
-    const getCategories = async()=>{
-        const response = await fetch('').then((response)=>response.json());
+
+    const getCategories = async () => {
+        const response = await fetch('').then((response) => response.json());
         setCategories(...categories, response);
     }
-    useEffect(()=>{
+
+    useEffect(() => {
         getApiData();
-    },[]);
+    }, []);
 
     const demoEvents = Array(10).fill(0).map((_, i) => (
         {
-            title: `Event ${i}`,
+            name: `Event ${i}`,
             description: "Some description",
             startDate: "",
             endDate: "",
@@ -36,8 +44,8 @@ export default function Home() {
         }
     ));
 
-    const setAddress = (address) =>{
-        setState({...state, address});
+    const setAddress = (address) => {
+        setState({ ...state, address });
     }
 
 
@@ -55,7 +63,7 @@ export default function Home() {
                             component="a"
                             href="/"
                             sx={{
-                                mt:2,
+                                mt: 2,
                                 display: { xs: 'none', md: 'flex' },
                                 fontWeight: 700,
                                 color: '#737373',
@@ -63,9 +71,9 @@ export default function Home() {
                             }}>
                             Promotional Events
                         </Typography>
-                        <Box className="scrollstyler" sx={{ display: "flex", flexWrap: "wrap", maxHeight:"90vh", overflow:"scroll" }}>
-                            {demoEvents.map((event, index) => (
-                                <EventCard key={index} setAddress={setAddress} />
+                        <Box className="scrollstyler" sx={{ display: "flex", flexWrap: "wrap", maxHeight: "90vh", overflow: "scroll" }}>
+                            {promoEvent.map((event, index) => (
+                                <EventCard promoEvent={event} key={index} setAddress={setAddress} />
                             ))}
                         </Box>
                     </Grid>

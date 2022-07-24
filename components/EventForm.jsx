@@ -11,7 +11,7 @@ function EventForm() {
     });
     const submit = (e) => {
         e.preventDefault()
-        fetch('/localhost:8083/event/createEvent', {
+        fetch('/192.168.147.160:8090/event/createEvent', {
             method: 'POST',
             body: JSON.stringify({ event }),
             headers: {

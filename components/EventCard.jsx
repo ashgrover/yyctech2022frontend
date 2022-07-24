@@ -16,14 +16,14 @@ const FlexStart = styled('div')({
     marginTop: '10px',
 });
 
-function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
+function EventCard({onMouseEnter, onMouseLeave, setAddress, promoEvent}) {
     const [open, setOpen] = useState(false);
-    const [state, setState] = useState({evt});
+    const [state, setState] = useState({promoEvent});
     const[location, setLocation] = useState("51.0442028431137, -114.05492997320393");
 
     const hoverElement = (e) =>{
         setOpen(true);
-        setAddress(evt?.address);
+        setAddress(promoEvent?.address);
         console.log(open);
         console.log(location);
 
@@ -42,10 +42,10 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Music Festival
+                    {promoEvent.name}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lit Music Festival is happening right now..
+                    {promoEvent.description}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     Start Date: 2022/02/02
@@ -54,7 +54,7 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
 
                     <FavoriteBorderTwoToneIcon />
                     <Typography variant="body2" color="text.secondary">
-                        22 Likes
+                        {Math.floor(Math.random() * 100)}
                     </Typography>
                 </FlexStart>
             </CardContent>
