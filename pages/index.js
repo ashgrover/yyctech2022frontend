@@ -6,6 +6,18 @@ import MapsAPI from "../components/MapsAPI";
 import Sidebar from "../components/Sidebar";
 
 export default function Home() {
+
+    const demoEvents = Array(10).fill(0).map((_, i) => (
+        {
+            title: `Event ${i}`,
+            description: "Some description",
+            startDate: "",
+            endDate: "",
+            category: "Tech",
+            likes: 10
+        }
+    ));
+
     return (
         <Layout>
             <div className="App">
@@ -13,9 +25,11 @@ export default function Home() {
                     <Grid item xs={12} md={2} lg={2}>
                         <EventCaterogies />
                     </Grid>
-                    <Grid item xs={6} md={6} lg={6}>
-                        <EventCard />
-                    </Grid>
+                    {demoEvents.map((event, index) => (
+                        <Grid item xs={4} md={4} lg={4} key={index}>
+                            <EventCard  />
+                        </Grid>
+                    ))}
                     <Grid item xs={6} md={4} lg={4}>
                         {/* <MapsAPI /> */}
                     </Grid>
