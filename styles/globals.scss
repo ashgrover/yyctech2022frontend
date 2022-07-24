@@ -14,7 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
-
+.zoomhover
+{
+  margin-left: 10px;
+  transition: transform .22s linear;
+}
+.zoomhover:hover
+{
+  transform: scale(1.1);
+  box-shadow: 4px 4px 8px 2px grey;
+}
 /* works on firfeox */
 .scrollstyler
 {
