@@ -4,14 +4,14 @@ import { useState } from 'react'
 import Typography from '@mui/material/Typography'
 function EventForm() {
     const [event, setEvent] = useState({
-        title: "",
+        name: "",
         date: "",
-        location: "",
+        address: "",
         description: "",
     });
     const submit = (e) => {
         e.preventDefault()
-        fetch('/192.168.147.160:8090/event/createEvent', {
+        fetch('http://192.168.147.160:8090/event/createEvent', {
             method: 'POST',
             body: JSON.stringify({ event }),
             headers: {
@@ -54,7 +54,7 @@ function EventForm() {
                         label="Event Title"
                         type="text"
                         variant='outlined'
-                        onChange={e => setEvent({ ...event, title: e.target.value })}
+                        onChange={e => setEvent({ ...event, name: e.target.value })}
                     />
                 </div>
                 <div>
@@ -72,7 +72,7 @@ function EventForm() {
                         label="Location"
                         type="text"
                         variant='outlined'
-                        onChange={e => setEvent({ ...event, location: e.target.value })}
+                        onChange={e => setEvent({ ...event, address: e.target.value })}
                     />
                 </div>
                 <div>

@@ -20,8 +20,9 @@ export default function Home() {
             method: "GET",
         });
         const result = await response.json();
-        const promoEvent = JSON.parse(result);
-        setEvent(promoEvent);
+        console.log(result)
+        //const promoEvent = JSON.parse(result);
+        setEvent(result);
     }
 
     const getCategories = async () => {
