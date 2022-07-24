@@ -23,7 +23,7 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
 
     const hoverElement = (e) =>{
         setOpen(true);
-        setAddress(evt.address);
+        setAddress(evt?.address);
         console.log(open);
         console.log(location);
 
