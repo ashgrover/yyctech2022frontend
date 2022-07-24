@@ -20,6 +20,14 @@ function EventForm() {
                 'Content-Type': 'application/json'
             }
         });
+        fetch('http://192.168.147.160:8084/postEvent', {
+            method: 'POST',
+            body: JSON.stringify({...event}),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        });
     }
     return (
         <center>
