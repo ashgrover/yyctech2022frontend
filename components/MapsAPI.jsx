@@ -14,7 +14,6 @@ function MapsAPI({ google }) {
         style={{
           height: '100vh',
           display: "flex",
-          
         }}
         initialCenter={{ lat: 47.444, lng: -122.176 }}
       >
