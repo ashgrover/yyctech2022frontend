@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 import { styled } from '@mui/system';
-import { useState } from 'react';
+
 
 const FlexStart = styled('div')({
     display: 'flex',
@@ -16,6 +16,7 @@ const FlexStart = styled('div')({
     justifyContent: 'flex-start',
     marginTop: '10px',
 });
+=======
 function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     const [open, setOpen] = useState(false);
     const [state, setState] = useState({evt});
@@ -51,7 +52,7 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
                     Start Date: 2022/02/02
                 </Typography>
                 <FlexStart >
-                   
+
                     <FavoriteBorderTwoToneIcon />
                     <Typography variant="body2" color="text.secondary">
                         22 Likes
@@ -65,4 +66,4 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
         </Card>
     );
 }
-export default EventCard; 
+export default EventCard;
