@@ -39,7 +39,7 @@ const ResponsiveAppBar = () => {
 
     return (
         <AppBar position="static">
-            <Container maxWidth="xl">
+            <Container sx={{backgroundColor:'rgb(200,16,46)'}} maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
@@ -126,7 +126,7 @@ const ResponsiveAppBar = () => {
                             </Button>
                         ))}
                         <Link href="../createPost">
-                        <Button sx={{height:"40px", marginTop:"12px", background:"#5a93e9"}} variant="contained">Create Event</Button>
+                        <Button sx={{height:"40px", marginTop:"12px", background:"rgb(148,148,148)"}} variant="contained">Create Event</Button>
                         </Link>
                     </Box>
 
