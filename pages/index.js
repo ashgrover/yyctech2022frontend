@@ -43,7 +43,7 @@ export default function Home() {
                             }}>
                             Promotional Events
                         </Typography>
-                        <Box sx={{ display: "flex", flexWrap: "wrap" }} >
+                        <Box sx={{ display: "flex", flexWrap: "wrap", maxHeight:"80vh", overflow:"scroll" }}>
                             {demoEvents.map((event, index) => (
                                 <EventCard key={index} />
                             ))}

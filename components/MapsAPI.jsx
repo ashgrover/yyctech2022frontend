@@ -8,11 +8,11 @@ function MapsAPI({ google }) {
   return (
     <div className="google-maps" style={{display:"flex", flexFlow:"row nowrap", padding:"0"}}>
       <Map
-      containerStyle={{maxWidth: '40.5%', display:"flex"}}
+      containerStyle={{maxWidth: '40.5%', maxHeight:"50%", display:"flex"}}
         google={google}
         zoom={8}
         style={{
-          height: '100%',
+          height: '100vh',
           display: "flex",
           
         }}
