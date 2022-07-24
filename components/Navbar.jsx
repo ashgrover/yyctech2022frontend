@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Link from 'next/link';
 
 const pages = ['Events'];
 const categories = ['Business', 'Food', 'Technology', 'Health', 'Music'];
@@ -38,7 +39,7 @@ const ResponsiveAppBar = () => {
 
     return (
         <AppBar position="static">
-            <Container maxWidth="xl">
+            <Container sx={{backgroundColor:'rgb(200,16,46)'}} maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
@@ -124,7 +125,9 @@ const ResponsiveAppBar = () => {
                                 {page}
                             </Button>
                         ))}
-                        <Button sx={{height:"40px", marginTop:"12px", background:"#5a93e9"}} variant="contained">Create Event</Button>
+                        <Link href="../createPost">
+                        <Button sx={{height:"40px", marginTop:"12px", background:"rgb(148,148,148)"}} variant="contained">Create Event</Button>
+                        </Link>
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

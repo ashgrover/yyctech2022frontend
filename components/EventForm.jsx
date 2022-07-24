@@ -1,7 +1,28 @@
 import { Box, TextField } from '@mui/material'
 import React from 'react'
+import {useState} from 'react'
 import Typography from '@mui/material/Typography'
 function EventForm() {
+    const [event, setEvent] = useState({
+        title:"",
+        date:"",
+        location:"",
+        description:"",
+    });
+    const submit = (e) =>{
+    e.preventDefault()
+    fetch('/api',{
+        method: 'POST',
+        body: JSON.stringify({event}),
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .then(json => setEvent(json.event))
+    console.log(event);
+}
     return (
         <center>
         <Box 
@@ -18,17 +39,22 @@ function EventForm() {
             }}
             noValidate
             autoComplete="off"
+            onSubmit={submit}
+            method="POST"
+
         >
             <Typography sx={{color:'#737373'}} variant="h4">
                 Create Event
             </Typography>
                         <div>
+                            
                 <TextField
                     required
                     id="EventTitle"
                     label="Event Title"
                     type="text"
                     variant='outlined'
+                    onChange={e=>setEvent({...event, title: e.target.value})}
                 />
             </div>
             <div>
@@ -36,6 +62,7 @@ function EventForm() {
                 required
                 id="EventDate"
                 type="date"
+                onChange={e=>setEvent({...event, date: e.target.value})}
                 />
             </div>
             <div>
@@ -45,6 +72,7 @@ function EventForm() {
                     label="Location"
                     type="text"
                     variant='outlined'
+                    onChange={e=>setEvent({...event, location: e.target.value})}
                 />
             </div>
             <div>
@@ -66,6 +94,7 @@ function EventForm() {
                     label="Description"
                     type="text"
                     variant='outlined'
+                    onChange={e=>setEvent({...event, description: e.target.value})}
                 />
             </div>
             {/* <br/>
@@ -79,7 +108,7 @@ function EventForm() {
                 width: "70%", 
                 height: "40px", 
                 borderRadius: "5px"
-                }} >Create Event</button>
+                }} type="submit" >Create Event</button>
         </Box>
         </center>
     )
