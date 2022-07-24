@@ -3,7 +3,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 
 
-function MapsAPI({ google }) {
+function MapsAPI({ google, address }) {
 
   return (
     <div className="google-maps" style={{display:"flex", flexFlow:"row nowrap", padding:"0"}}>

@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 import { styled } from '@mui/system';
-import { useState } from 'react';
+
 
 const FlexStart = styled('div')({
     display: 'flex',
@@ -16,12 +16,20 @@ const FlexStart = styled('div')({
     justifyContent: 'flex-start',
     marginTop: '10px',
 });
+<<<<<<< HEAD
 function EventCard({onMouseEnter, onMouseLeave}) {
+    
+    return (
+        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0"}}>
+=======
+function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     const [open, setOpen] = useState(false);
-    const[location, setLocation] = useState('');
+    const [state, setState] = useState({evt});
+    const[location, setLocation] = useState("51.0442028431137, -114.05492997320393");
+
     const hoverElement = (e) =>{
         setOpen(true);
-        setLocation("51.0442028431137, -114.05492997320393");
+        setAddress(evt.address);
         console.log(open);
         console.log(location);
 
@@ -31,7 +39,8 @@ function EventCard({onMouseEnter, onMouseLeave}) {
         console.log(open);
     }
     return (
-        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0"}} onMouseEnter={hoverElement} onMouseLeave={hoverOff}>
+        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0", cursor:"pointer"}} onMouseEnter={hoverElement}>
+>>>>>>> a80172eb8ba337b47a0ede9950d10063242896ef
             <CardMedia
                 component="img"
                 height="140"
