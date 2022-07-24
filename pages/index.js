@@ -4,6 +4,8 @@ import EventCaterogies from "../components/EventCaterogies";
 import Layout from "../components/Layout";
 import MapsAPI from "../components/MapsAPI";
 import Sidebar from "../components/Sidebar";
+import EventDatePicker from "../components/EventDatePicker";
+import Stack from "@mui/material/Stack";
 
 export default function Home() {
 
