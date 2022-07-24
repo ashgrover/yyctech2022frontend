@@ -16,7 +16,7 @@ const FlexStart = styled('div')({
     justifyContent: 'flex-start',
     marginTop: '10px',
 });
-=======
+
 function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     const [open, setOpen] = useState(false);
     const [state, setState] = useState({evt});
