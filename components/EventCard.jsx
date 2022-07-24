@@ -16,11 +16,6 @@ const FlexStart = styled('div')({
     justifyContent: 'flex-start',
     marginTop: '10px',
 });
-<<<<<<< HEAD
-function EventCard({onMouseEnter, onMouseLeave}) {
-    
-    return (
-        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0"}}>
 =======
 function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     const [open, setOpen] = useState(false);
@@ -40,7 +35,6 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     }
     return (
         <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0", cursor:"pointer"}} onMouseEnter={hoverElement}>
->>>>>>> a80172eb8ba337b47a0ede9950d10063242896ef
             <CardMedia
                 component="img"
                 height="140"
@@ -58,7 +52,7 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
                     Start Date: 2022/02/02
                 </Typography>
                 <FlexStart >
-                   
+
                     <FavoriteBorderTwoToneIcon />
                     <Typography variant="body2" color="text.secondary">
                         22 Likes
@@ -72,4 +66,4 @@ function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
         </Card>
     );
 }
-export default EventCard; 
+export default EventCard;
