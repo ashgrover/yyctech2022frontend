@@ -1,20 +1,26 @@
+import { Container } from '@mui/system';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
-const mapStyles = {
-  maxWidth: '50vw',
-  height: '100%'
-};
+
 
 function MapsAPI({ google }) {
+
   return (
-    <Map
-      google={google}
-      zoom={8}
-      style={mapStyles}
-      initialCenter={{ lat: 47.444, lng: -122.176 }}
-    >
-      <Marker position={{ lat: 48.00, lng: -122.00 }} />
-    </Map>
+    <div className="google-maps" style={{display:"flex", flexFlow:"row nowrap", padding:"0"}}>
+      <Map
+      containerStyle={{maxWidth: '40.5%', display:"flex"}}
+        google={google}
+        zoom={8}
+        style={{
+          height: '100%',
+          display: "flex",
+          
+        }}
+        initialCenter={{ lat: 47.444, lng: -122.176 }}
+      >
+        <Marker position={{ lat: 48.00, lng: -122.00 }} />
+      </Map>
+    </div>
   );
 }
 
