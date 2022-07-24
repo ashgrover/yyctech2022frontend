@@ -4,8 +4,9 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 
 function MapsAPI({ google, address }) {
+  address = !address? "Platform Calgary, Alberta":address;
   const src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBFeyT9tNIbTLO4qTuIlarn-PS2dyApBZM&q=";
-  const sanitizedAddress = address.replace(/\s+/g, '+').toLowerCase();
+  const sanitizedAddress = address?.replace(/\s+/g, '+').toLowerCase();
 
   return (
     <div className="google-maps" style={{display:"flex", flexFlow:"row nowrap", padding:"0"}}>
