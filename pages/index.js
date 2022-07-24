@@ -7,10 +7,24 @@ import Sidebar from "../components/Sidebar";
 import EventDatePicker from "../components/EventDatePicker";
 import Stack from "@mui/material/Stack";
 import { Box } from "@mui/system";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
     const[state, setState] = useState({address:""});
+    const [event, setEvent] = useState({});
+    const [categories, setCategories] = useState([]);
+    const getApiData = async()=>{
+        const response = await fetch('http://localhost:8090/event/getAllEvent').then((response)=>response.json());
+        setEvent(...event, response);
+    }
+    const getCategories = async()=>{
+        const response = await fetch('').then((response)=>response.json());
+        setCategories(...categories, response);
+    }
+    useEffect(()=>{
+        getApiData();
+    },[]);
+
     const demoEvents = Array(10).fill(0).map((_, i) => (
         {
             title: `Event ${i}`,
