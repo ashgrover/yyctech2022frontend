@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
 import { styled } from '@mui/system';
 
-
 const FlexStart = styled('div')({
     display: 'flex',
     flexDirection: 'row',
