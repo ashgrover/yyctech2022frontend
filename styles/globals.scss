@@ -15,6 +15,31 @@ a {
   box-sizing: border-box;
 }
 
+/* works on firfeox */
+.scrollstyler
+{
+    scrollbar-width: thin;
+    scrollbar-color: white grey;
+}
+/* supported in chrome, edge, safari only */
+.scrollstyler::-webkit-scrollbar
+{
+    width: 11px;
+} 
+.scrollstyler::-webkit-scrollbar-track
+{
+    border: 2px solid white;
+    border-radius: 16px;
+    background-color: grey;
+}
+.scrollstyler::-webkit-scrollbar-thumb
+{
+    width: 11px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
