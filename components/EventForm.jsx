@@ -5,23 +5,21 @@ import Typography from '@mui/material/Typography'
 function EventForm() {
     const [event, setEvent] = useState({
         name: "",
-        date: "",
-        address: "",
+        start_date: "",
+        address: {},
         description: "",
     });
     const submit = (e) => {
         e.preventDefault()
+        console.log(event);
         fetch('http://192.168.147.160:8090/event/createEvent', {
             method: 'POST',
-            body: JSON.stringify({ event }),
+            body: JSON.stringify({...event}),
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             }
-        })
-            .then(res => res.json())
-            .then(json => setEvent(json.event))
-        console.log(event);
+        });
     }
     return (
         <center>
@@ -62,7 +60,7 @@ function EventForm() {
                         required
                         id="EventDate"
                         type="date"
-                        onChange={e => setEvent({ ...event, date: e.target.value })}
+                        onChange={e => setEvent({ ...event, start_date: e.target.value })}
                     />
                 </div>
                 <div>
@@ -72,7 +70,6 @@ function EventForm() {
                         label="Location"
                         type="text"
                         variant='outlined'
-                        onChange={e => setEvent({ ...event, address: e.target.value })}
                     />
                 </div>
                 <div>
