@@ -30,8 +30,6 @@ function MapsAPI({ google, address }) {
                 src=${src}${sanitizedAddress},canada&zoom=16
                 allowfullscreen>
               </iframe>"`}} 
-              
-              
           />;
   
     </div>
