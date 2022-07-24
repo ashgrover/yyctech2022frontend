@@ -7,9 +7,10 @@ import Sidebar from "../components/Sidebar";
 import EventDatePicker from "../components/EventDatePicker";
 import Stack from "@mui/material/Stack";
 import { Box } from "@mui/system";
+import { useState } from "react";
 
 export default function Home() {
-
+    const[state, setState] = useState({address:""});
     const demoEvents = Array(10).fill(0).map((_, i) => (
         {
             title: `Event ${i}`,
@@ -20,6 +21,11 @@ export default function Home() {
             likes: 10
         }
     ));
+
+    const setAddress = (address) =>{
+        setState({...state, address});
+    }
+
 
     return (
         <Layout>
@@ -45,12 +51,12 @@ export default function Home() {
                         </Typography>
                         <Box className="scrollstyler" sx={{ display: "flex", flexWrap: "wrap", maxHeight:"90vh", overflow:"scroll" }}>
                             {demoEvents.map((event, index) => (
-                                <EventCard key={index} />
+                                <EventCard key={index} setAddress={setAddress} />
                             ))}
                         </Box>
                     </Grid>
                     <Grid item xs={4} md={6} lg={5}>
-                        <MapsAPI />
+                        <MapsAPI address={address} />
                     </Grid>
                 </Grid>
             </div>

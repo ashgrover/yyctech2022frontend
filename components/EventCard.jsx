@@ -16,12 +16,14 @@ const FlexStart = styled('div')({
     justifyContent: 'flex-start',
     marginTop: '10px',
 });
-function EventCard({onMouseEnter, onMouseLeave}) {
+function EventCard({onMouseEnter, onMouseLeave, setAddress, evt}) {
     const [open, setOpen] = useState(false);
-    const[location, setLocation] = useState('');
+    const [state, setState] = useState({evt});
+    const[location, setLocation] = useState("51.0442028431137, -114.05492997320393");
+
     const hoverElement = (e) =>{
         setOpen(true);
-        setLocation("51.0442028431137, -114.05492997320393");
+        setAddress(evt.address);
         console.log(open);
         console.log(location);
 
@@ -31,7 +33,7 @@ function EventCard({onMouseEnter, onMouseLeave}) {
         console.log(open);
     }
     return (
-        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0"}} onMouseEnter={hoverElement} onMouseLeave={hoverOff}>
+        <Card sx={{ maxWidth: 200, margin:"20px 20px 20px 0", cursor:"pointer"}} onMouseEnter={hoverElement}>
             <CardMedia
                 component="img"
                 height="140"
